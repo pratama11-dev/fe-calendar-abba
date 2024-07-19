@@ -27,14 +27,11 @@ Follow these steps to set up and run the project:
 
 1. Clone the repository to your local machine:
 
-```bash
-git clone https://github.com/Pulau-Intan-Lestari/boilerplate-web-pg.git
-```
 
 2. Navigate to the project's root directory:
 
 ```bash
-cd boilerplate-web-pg
+cd boilerplate
 ```
 
 3. Install project dependencies using pnpm:

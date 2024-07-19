@@ -4,7 +4,7 @@ run apk update && apk add git
 
 run mkdir /app
 workdir /app
-run cd /app && git clone https://puthere@github.com/pulau-intan-lestari/put-here.git .
+run cd /app && git clone https://puthere@github.com/put-here.git .
 run git pull
 run npm i
 run npm run build
