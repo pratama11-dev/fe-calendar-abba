@@ -1,0 +1,50 @@
+module.exports = {
+  plugins: ["jsx-a11y"],
+  extends: [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "next/core-web-vitals",
+  ],
+  parser: "@typescript-eslint/parser",
+  overrides: [
+    {
+      files: ["src/tests/**.spec.tsx"],
+      plugins: ["jest"],
+      extends: ["plugin:jest/recommended"],
+      rules: { "jest/prefer-expect-assertions": "off" },
+    },
+  ],
+  rules: {
+    "import/extensions": 0,
+    quotes: 0,
+    "linebreak-style": 0,
+    "react/jsx-filename-extension": [
+      1,
+      { extensions: [".js", ".jsx", ".tsx"] },
+    ],
+    "react/prop-types": "off",
+    "no-array-index-key": 0,
+    "object-curly-newline": 0,
+    "comma-dangle": 0,
+    "no-restricted-syntax": 0,
+    "eslint-disable-next-line": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/require-default-props": 1,
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-shadow": 0,
+    "@typescript-eslint/no-underscore-dangle": 0,
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        argsIgnorePattern: "^[_,e]",
+        varsIgnorePattern: "^_",
+      },
+    ],
+    "@typescript-eslint/no-explicit-any": 1,
+    "no-console": process.env.NEXT_PUBLIC_ENVIRONMENT === "PROD" ? 1 : 0,
+    "eol-last": 0,
+  },
+};
