@@ -210,7 +210,15 @@ const ModalDetailEvent = ({
                             </Form.Item>
                             <Row justify={"end"}>
                                 <Button
-                                    onClick={() => handleUpdate() }
+                                    onClick={() => setForEdit(false)}
+                                    loading={loading}
+                                    type="default"
+                                    style={{ marginRight: "10px" }}
+                                >
+                                    Cancel
+                                </Button>
+                                <Button
+                                    onClick={() => handleUpdate()}
                                     loading={loading}
                                     type="primary"
                                     style={{ marginRight: "10px" }}
