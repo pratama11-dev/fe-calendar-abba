@@ -26,7 +26,7 @@ const initialRes = {
   config: {},
 };
 
-const useFetcher = (sessions: Sessions) => {
+const useFetcher = (sessions?: Sessions) => {
   const [isLoading, setLoading] = useState(false);
   const [isError, setError] = useState<any | undefined>("");
 

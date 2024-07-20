@@ -75,7 +75,7 @@ function DashboardLayout({
           </div>
 
           <Footer style={{ textAlign: "center" }}>
-            Pelinitra Gunawan ©
+             ©
             {' '}
             {moment().year()}
           </Footer>

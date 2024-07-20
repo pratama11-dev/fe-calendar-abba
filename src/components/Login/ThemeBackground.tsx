@@ -71,7 +71,7 @@ function ThemeBackground() {
               fontSize: isTablet ? "19px" : "30px",
             }}
           >
-            Production Planning Inventory Control
+            {/* Production Planning Inventory Control */}
           </h1>
         </span>
       </div>

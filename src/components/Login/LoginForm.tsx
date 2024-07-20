@@ -45,7 +45,7 @@ function LoginForm({ session, ...props }: ILoginForm) {
           gap: 10,
         }}
       >
-        <Image
+        {/* <Image
           src="/Images/logo_SPG.png"
           alt="logo spg"
           preview={false}
@@ -53,7 +53,7 @@ function LoginForm({ session, ...props }: ILoginForm) {
         />
         <h2 style={{ fontSize: "13px", letterSpacing: "1px" }}>
           System Pelitra Gunawan
-        </h2>
+        </h2> */}
       </div>
       <h3 style={{ fontSize: "34px", letterSpacing: "3px" }}>Welcome Back!</h3>
       <Col lg={12} span={24} {...props}>

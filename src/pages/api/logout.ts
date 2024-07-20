@@ -21,7 +21,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST" || req.method === "GET") {
-    const cookiesData = [buildLogoutCookies("sso-pg", "")];
+    const cookiesData = [buildLogoutCookies("sso", "")];
 
     try {
       res.setHeader("Set-Cookie", cookiesData);

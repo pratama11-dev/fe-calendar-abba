@@ -139,7 +139,7 @@ export async function getSessionFromHeader(req: NextApiRequest | any) {
     token = req.headers?.authorization ?? "";
     let getTokenFromHeader = true;
 
-    const tokenfromcookie = getCookie("sso-pg", req);
+    const tokenfromcookie = getCookie("sso", req);
     if (token === "") {
       token = tokenfromcookie;
       getTokenFromHeader = false;

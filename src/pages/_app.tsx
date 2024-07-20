@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
 
 import type { AppProps } from "next/app";
 import type { NextPage } from "next";

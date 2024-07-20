@@ -12,20 +12,6 @@ export const AdminRoutes: routesType = [
     icon: <HomeOutlined rev="label" />,
     children: [],
   },
-  // {
-  //   path: "/inbound-order",
-  //   key: "inbound-order",
-  //   name: "IBOR Greige Plan",
-  //   icon: <PiWarehouseDuotone />,
-  //   children: [],
-  // },
-  // {
-  //   path: "/production-card",
-  //   key: "production-card",
-  //   name: "Production Card",
-  //   icon: <FileProtectOutlined />,
-  //   children: [],
-  // },
   {
     path: "/production",
     key: "production",
@@ -49,13 +35,6 @@ export const AdminRoutes: routesType = [
       },
     ],
   },
-  // {
-  //   path: "/production-order",
-  //   key: "production-order",
-  //   name: "Production Order",
-  //   icon: <TbBuildingFactory />,
-  //   children: [],
-  // },
   {
     path: "/planning",
     key: "planning",
