@@ -20,10 +20,10 @@ const Calendar = ({
     const calendarRef = useRef<FullCalendar>(null);
 
     const [modal, setModal] = useState<boolean>(false);
-    const [idData, setIdData] = useState<number>()
+    const [idData, setIdData] = useState<number | undefined>()
 
     const handleDateClick = (arg: DateClickArg) => {
-        alert('Clicked on: ' + arg.dateStr);
+        // alert('Clicked on: ' + arg.dateStr);
         setSelectedDate(null)
     };
 
@@ -87,6 +87,7 @@ const Calendar = ({
                 setVisible={setModal}
                 id={idData}
                 onFinish={() => {
+                    setIdData(undefined)
                     // uq.invalidateQueries(["retur-grpo"])
                     // uq.refetchQueries(["retur-grpo"])
                 }}

@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useState } from "react";
-import { DatePicker, Form, Input, Modal, Select } from "antd";
+import { Checkbox, DatePicker, Form, Input, Modal, Select } from "antd";
 import { useForm } from "antd/lib/form/Form";
 import { handlingError } from "../../pages/_app";
 import useAuth from "@api/customHooks/useAuth";
@@ -26,8 +26,9 @@ const ModalAddEvent = ({
     const { FetcherPost } = useFetcher();
 
     const [loading, setLoading] = useState(false);
+    const [checked, setChecked] = useState(false);
     const [periode, setPeriode] = useState<Date[] | undefined>(undefined);
-    const [users, setUsers] = useState<string[]>([]);    
+    const [users, setUsers] = useState<string[]>([]);
 
     const [form] = useForm();
 
@@ -115,6 +116,9 @@ const ModalAddEvent = ({
                         name="date"
                         label="Date"
                     >
+                        {/* <Checkbox checked={checked} onChange={(e) => {setChecked(e.target.checked)}}>
+                            For multiple?
+                        </Checkbox> */}
                         <DatePicker.RangePicker
                             picker="date"
                             showTime
@@ -124,6 +128,7 @@ const ModalAddEvent = ({
                                 setPeriode(date);
                             }}
                         />
+
                     </Form.Item>
 
                     <Form.Item

@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { Dayjs } from "dayjs";
 import ModalAddEvent from "@components/Calendar/ModalAddEvent";
 import { useUserQuery } from "@services/reactQuery/users";
+import useDebounce from "@utils/helpers/customHooks/useDebounce";
 
 function Home(session: Sessions) {
   useNavbar(["home"], [{ name: "Home", url: "/" }]);
@@ -18,6 +19,8 @@ function Home(session: Sessions) {
   const [modalAddEnvent, setModalAddEvent] = useState(false);
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState<string[]>([])
+  const [search, setSearch] = useState("")
+  const debouncedSearch = useDebounce<string>(search, 500)
 
   const showDrawer = () => {
     setOpen(true);
@@ -38,6 +41,7 @@ function Home(session: Sessions) {
 
   const data = useCalendarQuery({
     enabled: true,
+    search: debouncedSearch,
     users: user
   })
 
@@ -81,7 +85,7 @@ function Home(session: Sessions) {
       <LayoutWrapper>
         <Col sm={24} md={24} xl={4}>
           <Col style={{ padding: 10 }}>
-            <p>Calendar</p>
+            <p>ABBA Calendar</p>
             <Divider style={{ margin: 0 }} />
           </Col>
           <Col style={{ padding: 10 }}>
@@ -101,9 +105,20 @@ function Home(session: Sessions) {
                 onSelect={onDateSelect}
               />
             </div>
+
+            <Divider />
+
+            <Input
+              allowClear
+              placeholder="Search by Title"
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+            />
+
             <Select
               mode="tags"
-              style={{ width: '100%' }}
+              style={{ width: '100%', marginTop: 10 }}
               placeholder="Search or create name"
               options={options}
               onChange={(value) => setUser(value as string[])} // Cast value to string array
